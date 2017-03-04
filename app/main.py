@@ -26,6 +26,8 @@ def start():
     board_width = data['width']
     board_height = data['height']
 
+    print(data)
+
     head_url = '%s://%s/static/head.png' % (
         bottle.request.urlparts.scheme,
         bottle.request.urlparts.netloc
@@ -51,9 +53,21 @@ def move():
     # TODO: Do things with data
     directions = ['up', 'down', 'left', 'right']
 
+    parsedMapData = []
+    otherSnakes = []
+    ourSnakeId = data['you']
+    for snake in data['snakes']:
+        if snake['id'] == ourSnakeId:
+            ourSnake = snake
+        else:
+            otherSnakes.append(snake)
+    food = data['food']
+    dirsCanGo = directionsCanGo( parsedMapData, ourSnake, mapHeight, mapWidth, otherSnakes, food)
+    currMove = dirsCanGo[random.randint(0, len(dirsCanGo)-1)]
+
     return {
-        'move': 'up',
-        'taunt': 'battlesnake-python!'
+        'move': currMove,
+        'taunt': 'Direction: {}'.format(currMove)
     }
 
 
