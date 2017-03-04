@@ -91,7 +91,7 @@ def move():
 	food = data['food']
 	dirsCanGo = directionsCanGo( parsedMapData, ourSnake, board_height, board_width, otherSnakes, food)
 	
-	if(ourSnake['health_points'] < 65):
+	if(ourSnake['health_points'] < 99):
 		dirWantGo = findFood(data, ourSnake)
 		print(dirWantGo)
 		
