@@ -53,14 +53,19 @@ def start():
         bottle.request.urlparts.netloc
     )
 
+    tail_url = '%s://%s/static/skinny-tail.png' % (
+	    bottle.request.urlparts.scheme,
+	    bottle.request.urlparts.netloc
+    )
+
     # TODO: Do things with data
 
     return {
         'color': 'gold',
-        'taunt': 'gg',
+        'taunt': "y'all gold diggers!",
         #'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
-        'head_url': head_url,
-        'tail_url': 'skinny-tail',
+        'head_url': "shades",
+        'tail_url': tail_url,
         'name': 'Steve the Snek'
     }
 
