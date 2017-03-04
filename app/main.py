@@ -6,6 +6,10 @@ from directions import *
 #def initial(data):
 #	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
 
+board_width = 0;
+board_height = 0;
+game_id = 0;
+
 def distance(x, y):
 	x_steps = abs(x[0]-y[0])
 	y_steps = abs(y[1]- x[1])
@@ -23,8 +27,6 @@ def start():
     game_id = data['game_id']
     board_width = data['width']
     board_height = data['height']
-
-    print(data)
 
     head_url = '%s://%s/static/head.png' % (
         bottle.request.urlparts.scheme,
@@ -60,7 +62,7 @@ def move():
         else:
             otherSnakes.append(snake)
     food = data['food']
-    dirsCanGo = directionsCanGo( parsedMapData, ourSnake, mapHeight, mapWidth, otherSnakes, food)
+    dirsCanGo = directionsCanGo( parsedMapData, ourSnake, board_height, board_width, otherSnakes, food)
     currMove = dirsCanGo[random.randint(0, len(dirsCanGo)-1)]
 
     return {
