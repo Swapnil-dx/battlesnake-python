@@ -10,6 +10,26 @@ board_width = 0;
 board_height = 0;
 game_id = 0;
 
+def findFood(data, mySnake):
+	dirGo = []
+	minD = 1000
+	bestFood
+	myCoords = mySnake['coords'][0]
+	for coords in data['food']:
+		distanceF = distance(myCoords, coords)
+		if(distanceF < minD):
+			minD = distanceF
+			bestFood = coords
+	if((bestFood[0] - myCoords[0]) < 0):
+		dirGo.append('left')
+	elif(bestFood[0] - myCoords[0]) > 0):
+		dirGo.append('right')
+	if((bestFood[1] - myCoords[1]) < 0):
+		dirGo.append('up')
+	elif((bestFood[1] - myCoords[1]) > 0):
+		dirGo.append('down')	
+	return dirGo
+	
 def distance(x, y):
 	x_steps = abs(x[0]-y[0])
 	y_steps = abs(y[1]- x[1])
@@ -28,7 +48,7 @@ def start():
     board_width = data['width']
     board_height = data['height']
 
-    head_url = '%s://%s/static/head.png' % (
+    head_url = '%s://%s/static/shades.png' % (
         bottle.request.urlparts.scheme,
         bottle.request.urlparts.netloc
     )
@@ -39,12 +59,13 @@ def start():
         'color': 'gold',
         'taunt': 'gg',
         #'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
-        'head_url': 'shades',
+        'head_url': head_url,
         'tail_url': 'skinny-tail',
         'name': 'Steve the Snek'
-
     }
 
+
+	
 
 @bottle.post('/move')
 def move():
@@ -63,7 +84,11 @@ def move():
             otherSnakes.append(snake)
     food = data['food']
     dirsCanGo = directionsCanGo( parsedMapData, ourSnake, board_height, board_width, otherSnakes, food)
-    currMove = dirsCanGo[random.randint(0, len(dirsCanGo)-1)]
+    
+	if(data['you']['health_points'] < 65):
+		dirWantGo = findFood(data, ourSnakeId)
+	
+	currMove = dirsCanGo[random.randint(0, len(dirsCanGo)-1)]
 
     return {
         'move': currMove,
