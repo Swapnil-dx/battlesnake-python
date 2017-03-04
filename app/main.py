@@ -1,7 +1,7 @@
 import bottle
 import os
 import random
-
+import directions
 
 @bottle.route('/static/<path:path>')
 def static(path):
@@ -14,6 +14,7 @@ def start():
     game_id = data['game_id']
     board_width = data['width']
     board_height = data['height']
+    print(data)
 
     head_url = '%s://%s/static/head.png' % (
         bottle.request.urlparts.scheme,
@@ -23,8 +24,8 @@ def start():
     # TODO: Do things with data
 
     return {
-        'color': '#00FF00',
-        'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
+        'color': '#4099ff',
+        'taunt': 'Steve the Sssssssnek',
         'head_url': head_url,
         'name': 'battlesnake-python'
     }
