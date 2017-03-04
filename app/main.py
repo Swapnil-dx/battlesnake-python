@@ -99,7 +99,7 @@ def move():
 		print(dirWantGo)
 		for dir1 in dirCanGo:
 			for dir2 in dirWantGo:
-				if(dir1 = dir2):
+				if(dir1 == dir2):
 					finalChoice.append(dir1)
 	else:
 		finalChoice = dirCanGo
