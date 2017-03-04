@@ -11,8 +11,6 @@ def distance(x, y):
 	y_steps = abs(y[1]- x[1])
 	return x_steps + y_steps;
 	
-def food_path():
-	
 
 @bottle.route('/static/<path:path>')
 def static(path):
