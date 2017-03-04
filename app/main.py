@@ -1,6 +1,7 @@
 import bottle
 import os
 import random
+import directions
 
 
 @bottle.route('/static/<path:path>')
@@ -40,7 +41,7 @@ def move():
     directions = ['up', 'down', 'left', 'right']
 
     return {
-        'move': random.choice(directions),
+        'move': 'up',
         'taunt': 'battlesnake-python!'
     }
 
