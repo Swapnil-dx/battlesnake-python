@@ -82,6 +82,7 @@ def move():
     parsedMapData = []
     otherSnakes = []
     ourSnakeId = data['you']
+	ourSnake
     for snake in data['snakes']:
         if snake['id'] == ourSnakeId:
             ourSnake = snake
@@ -91,7 +92,7 @@ def move():
 	dirsCanGo = directionsCanGo( parsedMapData, ourSnake, board_height, board_width, otherSnakes, food)
 	
 	if(data['you']['health_points'] < 65):
-		dirWantGo = findFood(data, ourSnakeId)
+		dirWantGo = findFood(data, ourSnake)
 		print(dirWantGo)
 		
 	currMove = dirsCanGo[random.randint(0, len(dirsCanGo)-1)]
