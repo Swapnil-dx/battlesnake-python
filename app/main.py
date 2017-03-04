@@ -1,7 +1,7 @@
 import bottle
 import os
 import random
-import directions
+from directions import *
 
 #def initial(data):
 #	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
