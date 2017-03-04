@@ -38,35 +38,35 @@ def distance(x, y):
 
 @bottle.route('/static/<path:path>')
 def static(path):
-    return bottle.static_file(path, root='static/')
+	return bottle.static_file(path, root='static/')
 
 
 @bottle.post('/start')
 def start():
-    data = bottle.request.json
-    game_id = data['game_id']
-    board_width = data['width']
-    board_height = data['height']
+	data = bottle.request.json
+	game_id = data['game_id']
+	board_width = data['width']
+	board_height = data['height']
 
-    head_url = '%s://%s/static/shades.png' % (
-        bottle.request.urlparts.scheme,
-        bottle.request.urlparts.netloc
-    )
+	head_url = '%s://%s/static/shades.png' % (
+		bottle.request.urlparts.scheme,
+		bottle.request.urlparts.netloc
+	)
 
-    tail_url = '%s://%s/static/skinny-tail.png' % (
-	    bottle.request.urlparts.scheme,
-	    bottle.request.urlparts.netloc
-    )
+	tail_url = '%s://%s/static/skinny-tail.png' % (
+		bottle.request.urlparts.scheme,
+		bottle.request.urlparts.netloc
+	)
 
     # TODO: Do things with data
 
-    return {
-        'color': 'gold',
-        'taunt': "y'all gold diggers!",
-        #'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
-        'head_url': "shades",
-        'tail_url': tail_url,
-        'name': 'Steve the Snek'
+	return {
+		'color': 'gold',
+		'taunt': "y'all gold diggers!",
+		#'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
+		'head_url': "shades",
+		'tail_url': tail_url,
+		'name': 'Steve the Snek'
     }
 
 
@@ -83,11 +83,11 @@ def move():
 	otherSnakes = []
 	ourSnakeId = data['you']
 	ourSnake
-    for snake in data['snakes']:
-        if snake['id'] == ourSnakeId:
-            ourSnake = snake
-        else:
-            otherSnakes.append(snake)
+	for snake in data['snakes']:
+		if snake['id'] == ourSnakeId:
+			ourSnake = snake
+		else:
+			otherSnakes.append(snake)
 	food = data['food']
 	dirsCanGo = directionsCanGo( parsedMapData, ourSnake, board_height, board_width, otherSnakes, food)
 	
@@ -97,13 +97,13 @@ def move():
 		
 	currMove = dirsCanGo[random.randint(0, len(dirsCanGo)-1)]
 
-    return {
-        'move': currMove,
-        'taunt': 'Direction: {}'.format(currMove)
-    }
+	return {
+		'move': currMove,
+		'taunt': 'Direction: {}'.format(currMove)
+	}
 
 
 # Expose WSGI app (so gunicorn can find it)
 application = bottle.default_app()
 if __name__ == '__main__':
-    bottle.run(application, host=os.getenv('IP', '0.0.0.0'), port=os.getenv('PORT', '8080'))
+	bottle.run(application, host=os.getenv('IP', '0.0.0.0'), port=os.getenv('PORT', '8080'))
