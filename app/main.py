@@ -82,7 +82,7 @@ def move():
 	parsedMapData = []
 	otherSnakes = []
 	ourSnakeId = data['you']
-	ourSnake
+	ourSnake = None
 	for snake in data['snakes']:
 		if snake['id'] == ourSnakeId:
 			ourSnake = snake
