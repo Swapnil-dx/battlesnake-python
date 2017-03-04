@@ -74,14 +74,14 @@ def start():
 
 @bottle.post('/move')
 def move():
-    data = bottle.request.json
+	data = bottle.request.json
 
     # TODO: Do things with data
-    directions = ['up', 'down', 'left', 'right']
+	directions = ['up', 'down', 'left', 'right']
 
-    parsedMapData = []
-    otherSnakes = []
-    ourSnakeId = data['you']
+	parsedMapData = []
+	otherSnakes = []
+	ourSnakeId = data['you']
 	ourSnake
     for snake in data['snakes']:
         if snake['id'] == ourSnakeId:
