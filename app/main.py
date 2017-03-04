@@ -38,9 +38,20 @@ def move():
     # TODO: Do things with data
     directions = ['up', 'down', 'left', 'right']
 
+    parsedMapData = []
+    otherSnakes = []
+    for snake in data['snakes']:
+        if snake['id'] == ourSnakeId:
+            ourSnake = snake
+        else:
+            otherSnakes.append(snake)
+    food = data['food']
+    dirsCanGo = directionsCanGo( parsedMapData, ourSnake, mapHeight, mapWidth, otherSnakes, food)
+    currMove = dirsCanGo[random.randint(0, len(dirsCanGo)-1)]
+
     return {
-        'move': random.choice(directions),
-        'taunt': 'battlesnake-python!'
+        'move': currMove,
+        'taunt': 'I am taunting right now!'
     }
 
 
