@@ -13,7 +13,7 @@ game_id = 0;
 def findFood(data, mySnake):
 	dirGo = []
 	minD = 1000
-	bestFood
+	bestFood = None
 	myCoords = mySnake['coords'][0]
 	for coords in data['food']:
 		distanceF = distance(myCoords, coords)
