@@ -41,7 +41,7 @@ def start():
         #'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
         'head_url': 'shades',
         'tail_url': 'skinny-tail',
-        'name': 'battlesnake-python'
+        'name': 'Steve the Snek'
 
     }
 
