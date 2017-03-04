@@ -91,11 +91,20 @@ def move():
 	food = data['food']
 	dirsCanGo = directionsCanGo( parsedMapData, ourSnake, board_height, board_width, otherSnakes, food)
 	
+	dirWantGo = None
+	finalChoice = []
+	
 	if(ourSnake['health_points'] < 99):
 		dirWantGo = findFood(data, ourSnake)
 		print(dirWantGo)
-		
-	currMove = dirsCanGo[random.randint(0, len(dirsCanGo)-1)]
+		for dir1 in dirCanGo:
+			for dir2 in dirWantGo:
+				if(dir1 = dir2):
+					finalChoice.append(dir1)
+	else:
+		finalChoice = dirCanGo
+	
+	currMove = finalChoice[random.randint(0, len(finalChoice)-1)]
 
 	return {
 		'move': currMove,
