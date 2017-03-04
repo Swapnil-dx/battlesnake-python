@@ -2,6 +2,16 @@ import bottle
 import os
 import random
 
+#def initial(data):
+#	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
+
+def distance(x, y):
+	x_steps = abs(x[0]-y[0])
+	y_steps = abs(y[1]- x[1])
+	return x_steps + y_steps;
+	
+def food_path():
+	
 
 @bottle.route('/static/<path:path>')
 def static(path):
@@ -26,7 +36,7 @@ def start():
         'color': '#00FF00',
         'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
         'head_url': head_url,
-        'name': 'battlesnake-python'
+        'name': 'Steve the Snek'
     }
 
 
