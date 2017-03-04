@@ -22,7 +22,7 @@ def findFood(data, mySnake):
 			bestFood = coords
 	if((bestFood[0] - myCoords[0]) < 0):
 		dirGo.append('left')
-	elif(bestFood[0] - myCoords[0]) > 0):
+	elif((bestFood[0] - myCoords[0]) > 0):
 		dirGo.append('right')
 	if((bestFood[1] - myCoords[1]) < 0):
 		dirGo.append('up')
