@@ -92,6 +92,7 @@ def move():
     
 	if(data['you']['health_points'] < 65):
 		dirWantGo = findFood(data, ourSnakeId)
+		print dirWantGo
 	
 	currMove = dirsCanGo[random.randint(0, len(dirsCanGo)-1)]
 
