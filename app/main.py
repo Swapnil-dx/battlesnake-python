@@ -23,9 +23,11 @@ def start():
     # TODO: Do things with data
 
     return {
-        'color': '#00FF00',
-        'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
-        'head_url': head_url,
+        'color': 'gold',
+        'taunt': 'gg',
+        #'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
+        'head_url': 'shades',
+        'tail_url': 'skinny-tail',
         'name': 'battlesnake-python'
     }
 
