@@ -54,15 +54,11 @@ def start():
 	board_width = data['width']
 	board_height = data['height']
 
-	head_url = '%s://%s/static/shades.png' % (
+	head_url = '%s://%s/static/pic.png' % (
 		bottle.request.urlparts.scheme,
 		bottle.request.urlparts.netloc
 	)
 
-	tail_url = '%s://%s/static/skinny-tail.png' % (
-		bottle.request.urlparts.scheme,
-		bottle.request.urlparts.netloc
-	)
 
     # TODO: Do things with data
 
@@ -70,8 +66,9 @@ def start():
 		'color': 'gold',
 		'taunt': "y'all gold diggers!",
 		#'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
-		'head_url': "shades",
-		'tail_url': tail_url,
+		'head_url': head_url,
+		'head_type': "shades",
+		'tail_type': "skinny-tail",
 		'name': 'Steve the Snek'
     }
 
