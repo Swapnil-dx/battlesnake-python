@@ -108,7 +108,11 @@ def move():
 					finalChoice.append(dir1)
 	else:
 		finalChoice = dirsCanGo
+		
+	if(finalChoice == []):
+		finalChoice = dirsCanGo
 	
+	print str(finalChoice)
 	currMove = finalChoice[random.randint(0, len(finalChoice)-1)]
 
 	return {

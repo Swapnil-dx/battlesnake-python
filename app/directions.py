@@ -24,7 +24,6 @@ def directionsCanGo(mapdata, ourSnake, mapHeight, mapWidth, otherSnakes, food):
     #if head co-ord y is  width - 1 cant more right 
     if head[0] == mapWidth-1:
         canGo.remove('right')
-    print str(canGo)
     #-----Ourselves-----
     del ourSnake['coords'][-1]    
     for coord in ourSnake['coords']:
