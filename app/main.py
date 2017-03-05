@@ -92,7 +92,7 @@ def move():
 		else:
 			otherSnakes.append(snake)
 	food = data['food']
-	dirsCanGo = directionsCanGo( parsedMapData, ourSnake, board_height, board_width, otherSnakes, food)
+	dirsCanGo = directionsCanGo(parsedMapData, ourSnake, board_height, board_width, otherSnakes, food)
 	
 	dirsWantGo = None
 	finalChoice = []

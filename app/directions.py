@@ -92,5 +92,4 @@ def directionsCanGo(mapdata, ourSnake, mapHeight, mapWidth, otherSnakes, food):
                 canGo.remove('left')
             if 'down' in canGo:
                 canGo.remove('down')
-	print str(canGo)
 	return canGo
