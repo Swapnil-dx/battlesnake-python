@@ -10,19 +10,19 @@ def directionsCanGo(mapdata, ourSnake, mapHeight, mapWidth, otherSnakes, food):
     #-----WALLS-----
     
     #if head co-ord x is 0, cant move up
-    if head[1] == 1:
+    if head[1] <= 0:
         canGo.remove('up')
     
     #if head co-ord x is height-1 cant move down
-    if head[1] <= mapHeight-3:
+    if head[1] >= mapHeight-1:
         canGo.remove('down')
         
     #if head co-ord y is 0, cant move left
-    if head[0] == 1:
+    if head[0] <= 0:
         canGo.remove('left')
         
     #if head co-ord y is  width - 1 cant more right 
-    if head[0] <= mapWidth-3:
+    if head[0] >= mapWidth-1:
         canGo.remove('right')
     print str(canGo)
     #-----Ourselves-----
