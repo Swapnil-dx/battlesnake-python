@@ -3,9 +3,6 @@ import os
 import random
 from directions import *
 
-#def initial(data):
-#	grid = [[0 for col in xrange(data['height'])] for row in xrange(data['width'])]
-
 board_width = 0;
 board_height = 0;
 game_id = 0;
@@ -94,7 +91,7 @@ def move():
 	dirsWantGo = None
 	finalChoice = []
 	
-	if(ourSnake['health_points'] < 99):
+	if(ourSnake['health_points'] < 65):
 		dirsWantGo = findFood(data, ourSnake)
 		for dir1 in dirsCanGo:
 			for dir2 in dirsWantGo:
