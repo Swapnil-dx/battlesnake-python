@@ -100,14 +100,12 @@ def move():
 	dirsWantGo = None
 	finalChoice = []
 	
-	if(ourSnake['health_points'] < 99):
-		dirsWantGo = findFood(data, ourSnake)
-		for dir1 in dirsCanGo:
-			for dir2 in dirsWantGo:
-				if(dir1 == dir2):
-					finalChoice.append(dir1)
-	else:
-		finalChoice = dirsCanGo
+	dirsWantGo = findFood(data, ourSnake)
+	for dir1 in dirsCanGo:
+		for dir2 in dirsWantGo:
+			if(dir1 == dir2):
+				finalChoice.append(dir1)
+	
 	
 	currMove = finalChoice[random.randint(0, len(finalChoice)-1)]
 
