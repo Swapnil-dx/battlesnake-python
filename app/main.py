@@ -110,7 +110,7 @@ def move():
 
 	return {
 		'move': currMove,
-		'taunt': taunts[random.randint(0, len(taunts)-1)]
+#		'taunt': taunts[random.randint(0, len(taunts)-1)]
 	}
 
 
