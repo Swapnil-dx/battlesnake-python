@@ -105,8 +105,6 @@ def move():
 					finalChoice.append(dir1)
 	else:
 		finalChoice = dirsCanGo
-	
-	finalChoice = dirsWantGo
 
 	return {
 		'move': random.choice(finalChoice),
