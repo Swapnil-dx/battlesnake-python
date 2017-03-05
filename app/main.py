@@ -91,7 +91,7 @@ def move():
 	dirsWantGo = None
 	finalChoice = []
 	
-	if(ourSnake['health_points'] < 65):
+	if(ourSnake['health_points'] < 90):
 		dirsWantGo = findFood(data, ourSnake)
 		for dir1 in dirsCanGo:
 			for dir2 in dirsWantGo:
