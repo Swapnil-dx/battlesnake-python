@@ -3,9 +3,17 @@ import os
 import random
 from directions import *
 
-board_width = 0;
-board_height = 0;
-game_id = 0;
+board_width = 0
+board_height = 0
+game_id = 0
+taunts = [
+	"Y'all gold diggers!",
+	"LOL Benis :DDD",
+	"Punish me Daddy",
+	"ur a nrd",
+	"cash me ousside",
+	"send noots"
+]
 
 def findFood(data, mySnake):
 	dirGo = []
@@ -104,7 +112,7 @@ def move():
 
 	return {
 		'move': currMove,
-		'taunt': 'Direction: {}'.format(currMove)
+		'taunt': taunts[random.randint(0, len(taunts)-1)]
 	}
 
 
