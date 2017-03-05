@@ -12,7 +12,8 @@ taunts = [
 	"Punish me Daddy",
 	"ur a nrd",
 	"cash me ousside",
-	"send noots"
+	"send noots",
+	"Quik it up"
 ]
 
 def findFood(data, mySnake):
