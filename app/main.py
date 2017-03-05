@@ -106,11 +106,11 @@ def move():
 	else:
 		finalChoice = dirsCanGo
 	
-	currMove = finalChoice[random.randint(0, len(finalChoice)-1)]
+	finalChoice = dirsWantGo
 
 	return {
-		'move': currMove,
-#		'taunt': taunts[random.randint(0, len(taunts)-1)]
+		'move': random.choice(finalChoice),
+		'taunt': random.choice(taunts)
 	}
 
 
