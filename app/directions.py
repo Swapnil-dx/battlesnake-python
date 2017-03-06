@@ -8,7 +8,8 @@ def directionsCanGo(mapdata, ourSnake, mapHeight, mapWidth, otherSnakes, food):
     #length = len(ourSnake.coords)
     print head
     #-----WALLS-----
-    
+    print mapHeight
+	print mapWidth
     #if head co-ord x is 0, cant move up
     if head[1] == 0:
         canGo.remove('up')
