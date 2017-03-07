@@ -51,24 +51,18 @@ def start():
 	data = bottle.request.json
 	game_id = data['game_id']
 
-	head_url = '%s://%s/static/shades.png' % (
+	head_url = '%s://%s/static/head.png' % (
 		bottle.request.urlparts.scheme,
 		bottle.request.urlparts.netloc
 	)
-
-	tail_url = '%s://%s/static/skinny-tail.png' % (
-		bottle.request.urlparts.scheme,
-		bottle.request.urlparts.netloc
-	)
-
-    # TODO: Do things with data
 
 	return {
 		'color': 'gold',
 		'taunt': "y'all gold diggers!",
 		#'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
-		'head_url': "shades",
-		'tail_url': tail_url,
+		'head_url': head_url,
+		'head_type': "shades"
+		'tail_type': "skinny-tail",
 		'name': 'Steve the Snek'
     }
 
