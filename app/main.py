@@ -61,7 +61,7 @@ def start():
 		'taunt': "y'all gold diggers!",
 		#'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
 		'head_url': head_url,
-		'head_type': "shades"
+		'head_type': "shades",
 		'tail_type': "skinny-tail",
 		'name': 'Steve the Snek'
     }
