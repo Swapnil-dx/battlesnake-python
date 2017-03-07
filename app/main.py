@@ -3,8 +3,6 @@ import os
 import random
 from directions import *
 
-board_width = 0
-board_height = 0
 game_id = 0
 taunts = [
 	"Y'all gold diggers!",
@@ -49,13 +47,9 @@ def static(path):
 
 @bottle.post('/start')
 def start():
-	global board_width
-	global board_height
 	
 	data = bottle.request.json
 	game_id = data['game_id']
-	board_width = data['width']
-	board_height = data['height']
 
 	head_url = '%s://%s/static/shades.png' % (
 		bottle.request.urlparts.scheme,
@@ -84,6 +78,8 @@ def start():
 @bottle.post('/move')
 def move():
 	data = bottle.request.json
+	board_width = data['width']
+	board_height = data['height']
 
     # TODO: Do things with data
 	directions = ['up', 'down', 'left', 'right']
