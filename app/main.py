@@ -49,6 +49,9 @@ def static(path):
 
 @bottle.post('/start')
 def start():
+	global board_width
+	global board_height
+	
 	data = bottle.request.json
 	game_id = data['game_id']
 	board_width = data['width']
@@ -95,8 +98,6 @@ def move():
 		else:
 			otherSnakes.append(snake)
 	food = data['food']
-	print board_height
-	print board_width
 	dirsCanGo = directionsCanGo( parsedMapData, ourSnake, board_height, board_width, otherSnakes, food)
 	
 	dirsWantGo = None
