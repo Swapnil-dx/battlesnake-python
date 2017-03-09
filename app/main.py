@@ -60,7 +60,6 @@ def start():
 		'color': 'gold',
 		'taunt': "y'all gold diggers!",
 		#'taunt': '{} ({}x{})'.format(game_id, board_width, board_height),
-		'head_url': "https://s-media-cache-ak0.pinimg.com/736x/e6/cf/b1/e6cfb15e7c33b130e5cbdce7dc18176f.jpg",
 		'head_type': "shades",
 		'tail_type': "skinny-tail",
 		'name': 'Steve the Snek'
